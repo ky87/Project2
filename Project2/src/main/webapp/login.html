@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tennis Meetup</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #f1f1f1;}
+
+        h2 {
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .user {
+            background-color: #721c24;
+            color: white;
+            padding: 7px 10px;
+            width: 30%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding-top: 16px;
+            padding-left: 40%;
+            padding-bottom: 16px;
+            width: 20em;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>User Login</h2>
+
+<form action="home" method="post">
+
+    <div class="container">
+
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button class="user" onclick="admin()">Admin Login</button>
+        <div id="admins" style="display: none">
+            <input type="usertype" name="type">
+            <!--<input type="radio" name="admin" value="supervisor">Supervisor-->
+            <!--<input type="radio" name="admin" value="depart_head">Department Head-->
+            <!--<input type="radio" name="admin" value="ben_co">Benefits Coordinator-->
+        </div>
+
+        <button type="submit" value="LoginController">Login</button>
+
+    </div>
+
+</form>
+
+<script>
+    function admin() {
+        var x = document.getElementById("admins");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

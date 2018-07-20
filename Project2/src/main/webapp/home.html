@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            width: 80%;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            padding-left: 0;
+        }
+
+        #sidebar-wrapper {
+            z-index: 1000;
+            position: fixed;
+            left: 250px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#form">
+                    Reimbursement Form
+                </a>
+            </li>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="#history">Requests history</a>
+            </li>
+            <li>
+                <a href="http://www.google.com">Help</a>
+            </li>
+            <li class="logout">
+                <a href="login.html">Logout</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 28.07, lng: -82.43},
+            zoom: 15
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1v8Bn8ZGFNWVNGwJNXiVrAj1gAjQdsAc&callback=initMap"
+        async defer></script>
+</body>
+</html>
