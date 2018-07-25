@@ -29,7 +29,7 @@ public class SQLConnection {
     public Connection getConnection() {
         String url = "jdbc:postgresql://localhost/project_one";
         String username="postgres";
-        String password="ky12551852";
+        String password="";
         try {
             return DriverManager.getConnection(url, username,password);
         } catch (SQLException e) {
