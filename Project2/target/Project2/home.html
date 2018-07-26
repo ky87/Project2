@@ -5,72 +5,171 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            width: 80%;
-            position: absolute;
-            margin: 0;
-            padding: 0;
-        }
+        /*!* Always set the map height explicitly to define the size of the div*/
+         /** element that contains the map. *!*/
+        /*#map {*/
+            /*height: 100%;*/
+        /*}*/
+        /*!* Optional: Makes the sample page fill the window. *!*/
+        /*html, body {*/
+            /*height: 100%;*/
+            /*width: 80%;*/
+            /*position: absolute;*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
 
-        #wrapper {
-            padding-left: 0;
-        }
-
-        #sidebar-wrapper {
-            z-index: 1000;
+        .sidenav {
+            height: 100%;
+            width: 300px;
             position: fixed;
-            left: 250px;
-            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,57,84,0.6026611328125) 73%, rgba(197,222,227,0.9275911048012955) 100%);
+
+            overflow-x: hidden;
+            padding-top: 20px;
         }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        button {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(85,159,31,1) 77%, rgba(197,222,227,0.9275911048012955) 100%);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            margin-left: 15%;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            width: 70%;
+            font-size: 25px;
+        }
+
+        #map {
+        height: 100%;
+        width: 99%;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+
     </style>
 </head>
 <body>
 <div id="map"></div>
-<div id="wrapper">
+<div class="sidenav">
+    <button type="submit" value="Match">Find Match</button>
+</div>
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#form">
-                    Reimbursement Form
-                </a>
-            </li>
-            <li>
-                <a href="home.html">Home</a>
-            </li>
-            <li>
-                <a href="#history">Requests history</a>
-            </li>
-            <li>
-                <a href="http://www.google.com">Help</a>
-            </li>
-            <li class="logout">
-                <a href="login.html">Logout</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 28.07, lng: -82.43},
-            zoom: 15
-        });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1v8Bn8ZGFNWVNGwJNXiVrAj1gAjQdsAc&callback=initMap"
-        async defer></script>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 28.07, lng: -82.43},
+                zoom: 15
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1v8Bn8ZGFNWVNGwJNXiVrAj1gAjQdsAc&callback=initMap"
+            async defer></script>
+</div>
 </body>
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+    <!--<title>Simple Map</title>-->
+    <!--<meta name="viewport" content="initial-scale=1.0">-->
+    <!--<meta charset="utf-8">-->
+    <!--<style>-->
+        <!--/* Always set the map height explicitly to define the size of the div-->
+         <!--* element that contains the map. */-->
+        <!--#map {-->
+            <!--height: 100%;-->
+        <!--}-->
+        <!--/* Optional: Makes the sample page fill the window. */-->
+        <!--html, body {-->
+            <!--height: 100%;-->
+            <!--width: 80%;-->
+            <!--position: absolute;-->
+            <!--margin: 0;-->
+            <!--padding: 0;-->
+        <!--}-->
+
+        <!--#wrapper {-->
+            <!--padding-left: 0;-->
+        <!--}-->
+
+        <!--#sidebar-wrapper {-->
+            <!--z-index: 1000;-->
+            <!--position: fixed;-->
+            <!--left: 250px;-->
+            <!--height: 100%;-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="map"></div>-->
+<!--<div id="wrapper">-->
+
+    <!--&lt;!&ndash; Sidebar &ndash;&gt;-->
+    <!--<div id="sidebar-wrapper">-->
+        <!--<ul class="sidebar-nav">-->
+            <!--<li class="sidebar-brand">-->
+                <!--<a href="#form">-->
+                    <!--Reimbursement Form-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="home.html">Home</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="#history">Requests history</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="http://www.google.com">Help</a>-->
+            <!--</li>-->
+            <!--<li class="logout">-->
+                <!--<a href="login.html">Logout</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="#contact">Contact</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+<!--<script>-->
+    <!--var map;-->
+    <!--function initMap() {-->
+        <!--map = new google.maps.Map(document.getElementById('map'), {-->
+            <!--center: {lat: 28.07, lng: -82.43},-->
+            <!--zoom: 15-->
+        <!--});-->
+    <!--}-->
+<!--</script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1v8Bn8ZGFNWVNGwJNXiVrAj1gAjQdsAc&callback=initMap"-->
+        <!--async defer></script>-->
+<!--</body>-->
+<!--</html>-->
