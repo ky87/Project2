@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        form {border: 1px solid #f1f1f1;}
+
+        h1, h2 {
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .container {
+            padding-top: 16px;
+            padding-left: 40%;
+            padding-bottom: 16px;
+            width: 20em;
+        }
+
+        .newProfile {
+            padding-top: 16px;
+            padding-left: 40%;
+            padding-bottom: 16px;
+            width: 20em;
+        }
+
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Welcome to Tennis Hookup!!</h1>
+
+<h2>User Login</h2>
+
+<!-- Trigger/Open The Modal -->
+<form action="/api/login" method="get">
+
+    <div class="container">
+
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname">
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw">
+
+        <button type="submit" value="LoginController">Login</button>
+
+        <!--"https://maps.googleapis.com/maps/api/js?key=AIzaSyA1v8Bn8ZGFNWVNGwJNXiVrAj1gAjQdsAc&callback=initMap"-->
+
+
+    </div>
+
+</form>
+
+<div class="newProfile">
+
+    <button id="myBtn">Create New Profile</button>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <form action="/api/login" method="post">
+
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="newname">
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pass">
+
+                <label><b>Location</b></label>
+                <input type="location" placeholder="Enter GPS Location" name="lcn">
+
+                <label><b>Gender</b></label>
+                <input type="gender" placeholder="Enter Your Gender" name="sex">
+
+                <label><b>Age</b></label>
+                <input type="age" placeholder="Enter Age" name="age">
+
+                <label><b>Tennis Rank</b></label>
+                <input type="rank" placeholder="Enter Your Skill Level (1-9)" name="skill">
+
+                <button type="submit" value="CreateAccount">Create Account</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<img src="https://cdn.patchcdn.com/users/3886643/2013/07/T800x600/6cfa3a469dd6132d6b90f10cc61d5009.jpg"
+     alt="Tennis Rackets" width="500" height="333" class="center">
+
+<!-- The Modal -->
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--<title>Tennis Meetup</title>-->
+<!--<style>-->
+<!--body {font-family: Arial, Helvetica, sans-serif;}-->
+<!--form {border: 3px solid #f1f1f1;}-->
+
+<!--h2 {-->
+<!--text-align: center;-->
+<!--margin: auto;-->
+<!--padding: 10px;-->
+<!--}-->
+
+<!--input[type=text], input[type=password] {-->
+<!--width: 100%;-->
+<!--padding: 12px 20px;-->
+<!--margin: 8px 0;-->
+<!--display: inline-block;-->
+<!--border: 1px solid #ccc;-->
+<!--box-sizing: border-box;-->
+<!--}-->
+
+<!--button {-->
+<!--background-color: #4CAF50;-->
+<!--color: white;-->
+<!--padding: 14px 20px;-->
+<!--margin: 8px 0;-->
+<!--border: none;-->
+<!--cursor: pointer;-->
+<!--width: 100%;-->
+<!--}-->
+
+<!--.user {-->
+<!--background-color: #721c24;-->
+<!--color: white;-->
+<!--padding: 7px 10px;-->
+<!--width: 30%;-->
+<!--}-->
+
+<!--button:hover {-->
+<!--opacity: 0.8;-->
+<!--}-->
+
+<!--.container {-->
+<!--padding-top: 16px;-->
+<!--padding-left: 40%;-->
+<!--padding-bottom: 16px;-->
+<!--width: 20em;-->
+<!--}-->
+
+<!--.modal {-->
+<!--display: none; /* Hidden by default */-->
+<!--position: fixed; /* Stay in place */-->
+<!--z-index: 1; /* Sit on top */-->
+<!--padding-top: 100px; /* Location of the box */-->
+<!--left: 0;-->
+<!--top: 0;-->
+<!--width: 100%; /* Full width */-->
+<!--height: 100%; /* Full height */-->
+<!--overflow: auto; /* Enable scroll if needed */-->
+<!--background-color: rgb(0,0,0); /* Fallback color */-->
+<!--background-color: rgba(0,0,0,0.4); /* Black w/ opacity */-->
+<!--}-->
+
+<!--/* Modal Content */-->
+<!--.modal-content {-->
+<!--background-color: #fefefe;-->
+<!--margin: auto;-->
+<!--padding: 20px;-->
+<!--border: 1px solid #888;-->
+<!--width: 80%;-->
+<!--}-->
+
+<!--/* The Close Button */-->
+<!--.close {-->
+<!--color: #aaaaaa;-->
+<!--float: right;-->
+<!--font-size: 28px;-->
+<!--font-weight: bold;-->
+<!--}-->
+
+<!--.close:hover,-->
+<!--.close:focus {-->
+<!--color: #000;-->
+<!--text-decoration: none;-->
+<!--cursor: pointer;-->
+<!--}-->
+
+<!--</style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>User Login</h2>-->
+
+<!--&lt;!&ndash;<form action="home" method="post">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<label><b>Username</b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" placeholder="Enter Username" name="uname" required>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<label><b>Password</b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="password" placeholder="Enter Password" name="psw" required>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<button type="submit" value="LoginController">Login</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<button id="newProfileBtn">Create New Profile</button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--<div id="createModal" class="modal">-->
+<!--<div class="modal-content">-->
+<!--<span class="close">&times;</span>-->
+<!--<form action="home" method="post">-->
+
+<!--<div class="container">-->
+
+<!--<label><b>Username</b></label>-->
+<!--<input type="text" placeholder="Enter Username" name="uname" required>-->
+
+<!--<label><b>Password</b></label>-->
+<!--<input type="password" placeholder="Enter Password" name="psw" required>-->
+
+<!--<button type="submit" value="LoginController">Login</button>-->
+<!--<button id="newProfileBtn">Create New Profile</button>-->
+
+<!--</div>-->
+
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--var modal = document.getElementById('createModal');-->
+
+<!--// Get the button that opens the modal-->
+<!--var btn = document.getElementById("newProfileBtn");-->
+
+<!--// Get the <span> element that closes the modal-->
+<!--var span = document.getElementsByClassName("close")[0];-->
+
+<!--// When the user clicks the button, open the modal-->
+<!--btn.onclick = function() {-->
+<!--modal.style.display = "block";-->
+<!--}-->
+
+<!--// When the user clicks on <span> (x), close the modal-->
+<!--span.onclick = function() {-->
+<!--modal.style.display = "none";-->
+<!--}-->
+
+<!--// When the user clicks anywhere outside of the modal, close it-->
+<!--window.onclick = function(event) {-->
+<!--if (event.target == modal) {-->
+<!--modal.style.display = "none";-->
+<!--}-->
+<!--}-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
