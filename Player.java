@@ -2,36 +2,38 @@ package com.ex.model;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+@Component
 @Entity
-@Table(name="player", schema="public")
+@Table(name="profile", schema="public")
+
 public class Player {
     @Id
     @Column(name="id")
     private int id;
 
-    @Column(name="email", nullable=false, unique=true)
-    private String email;
-
-    @Column(name="name", nullable=false)
+    @Column(name="name", nullable=false, unique=true)
     private String name;
 
     @Column(name="password", nullable=false)
     private String password;
 
-    @Column(name="rank")
-    private int rank;
-
     @Column(name="location", nullable=false)
     private String location;
 
+    @Column(name="gender")
+    private String gender;
+
+    @Column(name="age", nullable=false)
+    private int age;
+
+    @Column(name="tennis_rank", nullable=false)
+    private int tennis_rank;
+
     public Player(){
     }
-
 
     public int getId() {
         return id;
@@ -39,13 +41,6 @@ public class Player {
 
     public void setId(int id) {
         this.id = id;
-    }
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getName() {
@@ -64,14 +59,6 @@ public class Player {
         this.password = password;
     }
 
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -80,15 +67,40 @@ public class Player {
         this.location = location;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getTennis_rank() {
+        return tennis_rank;
+    }
+
+    public void setTennis_rank(int tennis_rank) {
+        this.tennis_rank = tennis_rank;
+    }
+
     @Override
     public String toString() {
         return "Player{" +
                 "id=" + id +
-                ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", rank=" + rank +
                 ", location='" + location + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", tennis_rank=" + tennis_rank +
                 '}';
     }
 }
