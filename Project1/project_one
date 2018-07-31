@@ -1,0 +1,63 @@
+CREATE TABLE form (
+    id SERIAL PRIMARY KEY,
+	employee_id int REFERENCES employee (id),
+    date TIMESTAMP,
+	event_time VARCHAR,
+	event_location VARCHAR,
+	event_cost int,
+	event_type VARCHAR,
+	grading VARCHAR,
+	description VARCHAR
+); 
+
+CREATE TABLE supervisor (
+    id int NOT NULL PRIMARY KEY, -- 100's for supervisor id
+	employee_id int REFERENCES employee (id),
+    first_name VARCHAR,
+	last_name VARCHAR,
+	form_status BOOLEAN
+); 
+
+CREATE TABLE depart_head (
+    id int NOT NULL PRIMARY KEY, -- 200's for department head id
+	employee_id int REFERENCES supervisor (id),
+    first_name VARCHAR,
+	last_name VARCHAR,
+	form_status BOOLEAN
+); 
+
+CREATE TABLE ben_co (
+    id int NOT NULL PRIMARY KEY, -- 300's for benefits coordinator id
+	employee_id int REFERENCES depart_head (id),
+    first_name VARCHAR,
+	last_name VARCHAR,
+	form_status BOOLEAN
+); 
+
+insert into department (code, department_count, courses_count, seminar_count, prep_class_count, cert_count, tech_training_count, other_count)
+values ('ECE', 0, 0, 0, 0, 0, 0, 0);
+
+ALTER TABLE ben_co 
+ADD COLUMN password VARCHAR NOT NULL;
+
+UPDATE employee
+SET password = 'KYpassword'
+WHERE
+ ID = 1;
+ 
+ALTER TABLE ben_co
+ALTER COLUMN username SET NOT NULL;
+
+ALTER TABLE employee 
+RENAME COLUMN password TO username;
+
+DROP TABLE form;
+
+ALTER TABLE form
+ALTER COLUMN id SET SERIAL;
+
+INSERT into form (employee_id, date, event_time, event_location, event_cost, event_type, grading, description)
+values (1, '07/27/2018', '9', 'Muma', 1000, 'Presentation', 'Pass/Fail', 'Project 2');
+
+INSERT into supervisor (id, employee_id, first_name, last_name, form_status, username, password)
+values (101, 1, 'Test', 'Supervisor', false, 'super', 'visor');

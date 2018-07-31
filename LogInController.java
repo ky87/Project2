@@ -71,6 +71,4 @@ public class LogInController {
         LService.addNewProfile(newProfile);
 
     }
-
-
 }
